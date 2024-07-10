@@ -61,6 +61,14 @@
 			fill: yellow
 		}
 
+		.rect_blue {
+			fill: blue
+		}
+
+		.rect_pink {
+			fill: pink
+		}
+
 		.rect_gray {
 			fill: gray
 		}
@@ -70,7 +78,9 @@
 		}
 	</style>
 	<script type="module">
-		import { list_0611, list_0612, list_0613, list_0614, list_0615, list_0616, list_0617 } from "./test.js";
+		import { amr01_0611, amr01_0612, amr01_0613, amr01_0614, amr01_0615, amr01_0616, amr01_0617, amr01_test } from "./data_amr01.js";
+		import { amr02_0611, amr02_0612, amr02_0613, amr02_0614, amr02_0615, amr02_0616 } from "./data_amr02.js";
+		import { amr03_0611, amr03_0612, amr03_0613, amr03_0614, amr03_0615, amr03_0616, amr03_0617 } from "./data_amr03.js";
 		const categories = {
 			"旋轉中": { class: "rect_green", tooltip_html: "旋轉中" },
 			"車輛任務執行中": { class: "rect_green", tooltip_html: "車輛任務執行中" },
@@ -78,71 +88,172 @@
 			"退站中": { class: "rect_green", tooltip_html: "退站中" },
 			"進站中": { class: "rect_green", tooltip_html: "進站中" },
 			"站點任務執行中": { class: "rect_green", tooltip_html: "站點任務執行中" },
-			"站點任務停等中": { class: "rect_green", tooltip_html: "站點任務停等中" },
-			"車輛任務取消中": { class: "", tooltip_html: "車輛任務取消中" },
+			"站點任務停等中": { class: "rect_blue", tooltip_html: "站點任務停等中" },
+			"車輛任務取消中": { class: "rect_has_no_data", tooltip_html: "車輛任務取消中" },
 			"避停中": { class: "rect_has_no_data", tooltip_html: "避停中" },
 			"充電中": { class: "rect_purple", tooltip_html: "充電中" },
 			"啟動中": { class: "rect_gray", tooltip_html: "啟動中" },
-			"站點任務暫停中": { class: "rect_green", tooltip_html: "站點任務暫停中" },
-			"車輛任務暫停中": { class: "rect_green", tooltip_html: "車輛任務暫停中" },
+			"站點任務暫停中": { class: "rect_pink", tooltip_html: "站點任務暫停中" },
+			"車輛任務暫停中": { class: "rect_pink", tooltip_html: "車輛任務暫停中" },
 			"離線": { class: "rect_gray", tooltip_html: "離線" },
 			"車輛任務異常": { class: "rect_has_no_data", tooltip_html: "車輛任務異常" },
 		}
-		console.log(list_0617[0]);
-		var dataset = [{
-			"measure": "AMR01-0611",
-			"interval_s": 60 * 60 * 24,
+		var dataset = [
 
-			"categories": categories,
-			"data": list_0611
-		},
-		{
-			"measure": "AMR01-0612",
-			"interval_s": 60 * 60 * 24,
+			{
+				"measure": "AMR01-0611",
+				"interval_s": 60 * 60 * 24,
 
-			"categories": categories,
-			"data": list_0612
-		},
-		{
-			"measure": "AMR01-0613",
-			"interval_s": 60 * 60 * 24,
+				"categories": categories,
+				"data": amr01_0611
+			},
+			{
+				"measure": "AMR02-0611",
+				"interval_s": 60 * 60 * 24,
 
-			"categories": categories,
-			"data": list_0613
-		},
-		{
-			"measure": "AMR01-0614",
-			"interval_s": 60 * 60 * 24,
+				"categories": categories,
+				"data": amr02_0611
+			},
+			{
+				"measure": "AMR03-0611",
+				"interval_s": 60 * 60 * 24,
 
-			"categories": categories,
-			"data": list_0614
-		},
-		{
-			"measure": "AMR01-0615",
-			"interval_s": 60 * 60 * 24,
+				"categories": categories,
+				"data": amr03_0611
+			},
+			{
+				"measure": "AMR01-0612",
+				"interval_s": 60 * 60 * 24,
 
-			"categories": categories,
-			"data": list_0615
-		},
-		{
-			"measure": "AMR01-0616",
-			"interval_s": 60 * 60 * 24,
+				"categories": categories,
+				"data": amr01_0612
+			},
+			{
+				"measure": "AMR02-0612",
+				"interval_s": 60 * 60 * 24,
 
-			"categories": categories,
-			"data": list_0616
-		},
-		{
-			"measure": "AMR01-0617",
-			"interval_s": 60 * 60 * 24,
+				"categories": categories,
+				"data": amr02_0612
+			},
+			{
+				"measure": "AMR03-0612",
+				"interval_s": 60 * 60 * 24,
 
-			"categories": categories,
-			"data": list_0617
-		}];
+				"categories": categories,
+				"data": amr03_0612
+			},
+			{
+				"measure": "AMR01-0613",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr01_0613
+			},
+			{
+				"measure": "AMR02-0613",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr02_0613
+			},
+			{
+				"measure": "AMR03-0613",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr03_0613
+			},
+			{
+				"measure": "AMR01-0614",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr01_0614
+			},
+			{
+				"measure": "AMR02-0614",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr02_0614
+			},
+			{
+				"measure": "AMR03-0614",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr03_0614
+			},
+			{
+				"measure": "AMR01-0615",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr01_0612
+			},
+			{
+				"measure": "AMR02-0615",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr02_0612
+			},
+			{
+				"measure": "AMR03-0615",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr03_0612
+			},
+			{
+				"measure": "AMR01-0616",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr01_0616
+			},
+			{
+				"measure": "AMR02-0616",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr02_0616
+			},
+			{
+				"measure": "AMR03-0616",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr03_0616
+			},
+			{
+				"measure": "AMR01-0617",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr01_0617
+			},
+			{
+				"measure": "AMR03-0617",
+				"interval_s": 60 * 60 * 24,
+
+				"categories": categories,
+				"data": amr03_0617
+			},
+			// {
+			// 	"measure": "AMR01-0617",
+			// 	"interval_s": 60 * 60 * 24,
+
+			// 	"categories": categories,
+			// 	"data": list_0617
+			// }
+		];
 		var options = {
 			id_div_container: "visavail_container",
 			id_div_graph: "visavail_graph",
 			custom_categories: true,
-			defined_blocks: true,
+			responsive: true,
+			defined_blocks: false,
 			zoom: {
 				enabled: true
 			},
